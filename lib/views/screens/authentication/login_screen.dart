@@ -184,18 +184,12 @@ class LoginScreen extends StatelessWidget {
                       letterSpacing: 1,
                     ),
                 ),
-                InkWell(
-                  onTap: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context){
-                      return RegisterScreen();
-                    }));
-                  },
-                  child: Text('Sign Up',
+                     Text('Sign Up',
                   style:GoogleFonts.roboto(
                       fontWeight: FontWeight.bold,
                       color:Color(0xFF103DE5),
                   
-                  ),
+      
                   ),
                 ),
               ]
