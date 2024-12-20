@@ -1,0 +1,39 @@
+// Module-level build.gradle (in 'android/app/' directory)
+
+android {
+    ndkVersion = "25.1.8937393"  // Set the NDK version as per your configuration
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17  // Java 17 compatibility
+        targetCompatibility JavaVersion.VERSION_17  // Java 17 compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17  // Kotlin JVM target set to Java 17
+    }
+
+    allprojects {
+        repositories {
+            google()  // Google's Maven repository
+            mavenCentral()  // Maven Central repository
+        }
+    }
+
+    // Set the root build directory to `../build` (one level up)
+    rootProject.buildDir = "../build"
+
+    // Configure sub-projects to have individual build directories under the root
+    subprojects {
+        project.buildDir = "${rootProject.buildDir}/${project.name}"
+    }
+
+    // Ensure the app project is evaluated first
+    subprojects {
+        project.evaluationDependsOn(":app")
+    }
+
+    // Task to clean the build directory
+    tasks.register("clean", Delete) {
+        delete rootProject.buildDir
+    }
+}
