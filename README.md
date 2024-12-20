@@ -32,5 +32,5 @@ https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
 
 Open The directory in Android Studio and then Click on the require device as shown in the video of android studio.
 
-Click on run 
+Click on run .
 
