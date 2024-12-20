@@ -189,7 +189,7 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color:Color(0xFF103DE5),
                   
-      
+                  
                   ),
                 ),
               ]
